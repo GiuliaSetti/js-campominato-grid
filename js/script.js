@@ -38,11 +38,11 @@ let totalCells = 100;
 
 function squareGenerator(testo){
 
-    let newEL = document.createElement("div");
+    let newEl = document.createElement("div");
 
     newEl.classList.add("cell");
 
-    newEL.innerHTML = testo;
+    newEl.innerHTML = testo;
 
 
     return newEl
