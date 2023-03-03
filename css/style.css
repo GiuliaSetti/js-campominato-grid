@@ -8,9 +8,69 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+/* navbar */
+
+
+
+.navbar{
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: space-between;
+
+    padding: 10px;
+
+    position: fixed;
+
+    z-index: 1;
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.354);
+    background-color: white;
+}
+
+.navbar .nav_left{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar img{
+    width: 30px;
+}
+
+.navbar .nav_right button{
+    padding: 10px 20px;
+
+    border-radius: 30px;
+    border: none;
+
+    color: white;
+    font-weight: bold;
+
+    background-color:  rgb(146, 146, 247) ;
+}
+
+
+
+
+
+/* main */
+
+.main{
+    height: 100vh;
+    background-color: rgb(217, 227, 245);
+}
+
+
 .container{
     max-width: 800px;
     margin: 0 auto;
+
+    padding-top: 10rem;
 }
 
 /* griglia */
@@ -21,7 +81,13 @@
 
     width: calc(50px * 10);
 
-    margin: 4rem auto;
+
+    margin: 0 auto;
+    background-color: white;
+
+    font-weight: bold;
+
+    color: rgb(146, 146, 247);
 }
 
 /* singola cella */
@@ -37,5 +103,7 @@
 /* background cella al click */
 
 .lightpurple{
-    background-color: rgb(146, 146, 247) ;
+    background-color: rgb(146, 146, 247);
+    color: white;
+
 }
