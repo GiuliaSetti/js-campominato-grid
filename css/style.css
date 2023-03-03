@@ -8,6 +8,23 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* griglia */
+
+#grid_container{
+    display: flex;
+    flex-flow: row wrap;
+
+    width: calc(50px * 10);
+
+    margin: 4rem auto;
+}
+
+/* singola cella */
 
 
 .cell {
@@ -16,3 +33,5 @@
 
     border: 1px solid rgb(114, 114, 238);
 }
+
+/* background cella al click */
