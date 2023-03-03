@@ -36,3 +36,15 @@ let gridEl = document.getElementById("grid_container");
 let totalCells = 100;
 
 
+function squareGenerator(testo){
+
+    let newEL = document.createElement("div");
+
+    newEl.classList.add("cell");
+
+    newEL.innerHTML = testo;
+
+
+    return newEl
+
+}
