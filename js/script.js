@@ -36,11 +36,53 @@ let gridEl = document.getElementById("grid_container");
 let totalCells = 100;
 
 
+startGameButton.addEventListener("click", function(){
+    for(let i = 1; i <= totalCells; i++){
+
+        let cell = squareGenerator(i);
+
+        gridEl.append(cell);
+
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// creo la funzione
+
 function squareGenerator(testo){
 
+    // creo un elemento div
     let newEl = document.createElement("div");
 
+    // assegno all'elemento la classe cell
     newEl.classList.add("cell");
+
+    // all'interno dell'elemento in HTML introduco il parametro testo
 
     newEl.innerHTML = testo;
 
