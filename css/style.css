@@ -38,6 +38,18 @@
     align-items: center;
 }
 
+.navbar .nav_right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav_right select{
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: 2px solid lightblue;
+}
+
 .navbar img{
     width: 30px;
 }
@@ -55,13 +67,10 @@
 }
 
 
-
-
-
 /* main */
 
 .main{
-    height: 100vh;
+    height: 95vh;
     background-color: rgb(217, 227, 245);
 }
 
@@ -70,7 +79,7 @@
     max-width: 800px;
     margin: 0 auto;
 
-    padding-top: 10rem;
+    padding-top: 8rem;
 }
 
 /* griglia */
@@ -79,15 +88,26 @@
     display: flex;
     flex-flow: row wrap;
 
-    width: calc(50px * 10);
-
-
     margin: 0 auto;
     background-color: white;
 
     font-weight: bold;
 
     color: rgb(146, 146, 247);
+}
+
+.width100{
+    width: calc(50px * 10);
+}
+
+.width81{
+    
+    width: calc(50px * 9);
+}
+
+.width49{
+    
+    width: calc(50px * 7);
 }
 
 /* singola cella */
@@ -106,4 +126,11 @@
     background-color: rgb(146, 146, 247);
     color: white;
 
+}
+
+footer{
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(141, 113, 167);
 }

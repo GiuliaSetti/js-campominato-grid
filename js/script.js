@@ -32,27 +32,83 @@ let startGameButton = document.getElementById("start_game");
 // - memorizzo l'elemento griglia
 let gridEl = document.getElementById("grid_container");
 
+
+let selectLevel = document.getElementById("levels");
+
 // - memorizzo una variabile cella che valga 100.
 let totalCells = 100;
 
 
 
 startGameButton.addEventListener("click", function(){
+    gridEl.innerHTML = "";
+    let selectLevelEl = selectLevel.value;
 
-    for(let i = 1; i <= totalCells; i++){
+    if(selectLevelEl == "Hard"){
 
-        let cell = squareGenerator(i);
+        let totalCells = 49;
+
+        for(let i = 1; i <= totalCells; i++){
+
+            let cell = squareGenerator(i);
+        
+            gridEl.append(cell);
+
+            gridEl.classList.add("width49");
     
-        gridEl.append(cell);
-
-
-        cell.addEventListener("click", function(){
-
-            cell.classList.toggle("lightpurple");
-
-        })
     
+            cell.addEventListener("click", function(){
+    
+                cell.classList.toggle("lightpurple");
+    
+            })
+        
+        }
+        
+    } else if (selectLevelEl == "Medium"){
+
+        let totalCells = 81;
+
+        for(let i = 1; i <= totalCells; i++){
+
+            let cell = squareGenerator(i);
+        
+            gridEl.append(cell);
+
+            
+            gridEl.classList.add("width81");
+    
+    
+            cell.addEventListener("click", function(){
+    
+                cell.classList.toggle("lightpurple");
+    
+            })
+        
+        }
+        
+
+    } else {
+
+        for(let i = 1; i <= totalCells; i++){
+    
+            let cell = squareGenerator(i);
+        
+            gridEl.append(cell);
+
+            gridEl.classList.add("width100");
+    
+    
+            cell.addEventListener("click", function(){
+    
+                cell.classList.toggle("lightpurple");
+    
+            });
+        
+        }
+        
     }
+
     
    
 });
