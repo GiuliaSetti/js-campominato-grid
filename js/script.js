@@ -35,18 +35,27 @@ let gridEl = document.getElementById("grid_container");
 // - memorizzo una variabile cella che valga 100.
 let totalCells = 100;
 
-for(let i = 1; i <= totalCells; i++){
-
-    let cell = squareGenerator(i);
-
-    gridEl.append(cell);
-
-}
 
 
-// startGameButton.addEventListener("click", function(){
+startGameButton.addEventListener("click", function(){
+
+    for(let i = 1; i <= totalCells; i++){
+
+        let cell = squareGenerator(i);
+    
+        gridEl.append(cell);
+
+
+        cell.addEventListener("click", function(){
+
+            cell.classList.toggle("lightpurple");
+
+        })
+    
+    }
+    
    
-// });
+});
 
 
 
