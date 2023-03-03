@@ -23,4 +23,16 @@ al CLICK del bottone:
 */
 
 
-console.log("prova sa sa");
+// console.log("prova sa sa");
+
+
+// - memorizzo l'elemento bottone
+let startGameButton = document.getElementById("start_game");
+
+// - memorizzo l'elemento griglia
+let gridEl = document.getElementById("grid_container");
+
+// - memorizzo una variabile cella che valga 100.
+let totalCells = 100;
+
+
