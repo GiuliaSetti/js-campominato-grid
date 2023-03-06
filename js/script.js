@@ -10,15 +10,31 @@
 
 - memorizzo l'elemento griglia
 
-- memorizzo una variabile cella che valga 100.
+- memorizzo l'elemento per scegliere il livello di difficoltà.
 
-- creo una funzione che mi generi l'elemento (div) con classe .square.
+- memorizzo una variabile per il totale di celle.
+- memorizzo una variabile per il numero di colonne.
+
+- creo una funzione che mi generi l'elemento (div) con classe .square. e lo appenda al contenitore griglia.
 
 al CLICK del bottone:
 
-- creo una griglia di celle in base alla funzione precedentemente creata. 
 
-- appendo la cella alla contenitore griglia
+? SE il livello scelto è DIFFICILE:
+    ° il numero totale di celle sarà 49.
+    ° le colonne saranno 7.
+
+: ALTRIMENTI SE il livello scelto è MEDIO
+    ° il numero totale di celle sarà 81
+    ° le colonne saranno 9.
+:ALTRIMENTI 
+    ° il numero totale di celle sarà 100
+    ° le colonne 10.
+
+- creo una griglia di celle in base alla funzione precedentemente creata.
+ 
+- stilizzo la griglia in modo che la sua larghezza sia data dall moltiplicazione della larghezza del quadrato per il numero di colonne.
+
 
 */
 
@@ -36,80 +52,63 @@ let gridEl = document.getElementById("grid_container");
 let selectLevel = document.getElementById("levels");
 
 // - memorizzo una variabile cella che valga 100.
-let totalCells = 100;
+let totalCells;
+
+// memorizzo una variabile per il numero di colonne
+let colNumber;
 
 
 
 startGameButton.addEventListener("click", function(){
+
     gridEl.innerHTML = "";
+
     let selectLevelEl = selectLevel.value;
+
+
 
     if(selectLevelEl == "Hard"){
 
-        let totalCells = 49;
+        totalCells = 49;
 
-        for(let i = 1; i <= totalCells; i++){
-
-            let cell = squareGenerator(i);
+        colNumber = 7;
         
-            gridEl.append(cell);
-
-            gridEl.classList.add("width49");
-    
-    
-            cell.addEventListener("click", function(){
-    
-                cell.classList.toggle("lightpurple");
-    
-            })
-        
-        }
         
     } else if (selectLevelEl == "Medium"){
-
-        let totalCells = 81;
-
-        for(let i = 1; i <= totalCells; i++){
-
-            let cell = squareGenerator(i);
-        
-            gridEl.append(cell);
-
+   
+        totalCells = 81;
+     
+        colNumber = 9;
             
-            gridEl.classList.add("width81");
-    
-    
-            cell.addEventListener("click", function(){
-    
-                cell.classList.toggle("lightpurple");
-    
-            })
-        
-        }
-        
 
     } else {
 
-        for(let i = 1; i <= totalCells; i++){
-    
-            let cell = squareGenerator(i);
+        totalCells = 100;
         
-            gridEl.append(cell);
-
-            gridEl.classList.add("width100");
-    
-    
-            cell.addEventListener("click", function(){
-    
-                cell.classList.toggle("lightpurple");
-    
-            });
-        
-        }
+        colNumber = 10;
         
     }
 
+    gridEl.style.width = `calc(50px * ${colNumber})`;
+
+
+            
+    for(let i = 1; i <= totalCells; i++){
     
+
+        let cell = squareGenerator(i);
+
+
+        cell.addEventListener("click", function(){
+
+            cell.classList.toggle("lightpurple");
+
+        })
+    
+    }
+
+
+
    
 });
 
@@ -152,6 +151,8 @@ function squareGenerator(testo){
     // all'interno dell'elemento in HTML introduco il parametro testo
 
     newEl.innerHTML = testo;
+
+    gridEl.append(newEl);
 
 
     return newEl
